@@ -1,0 +1,11 @@
+/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/build/turing-project/CMakeFiles/turing.dir
+/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/build/turing-project/CMakeFiles/edit_cache.dir
+/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/build/turing-project/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/build/turing-project/TuringMachine/CMakeFiles/Tmachine.dir
+/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/build/turing-project/TuringMachine/CMakeFiles/edit_cache.dir
+/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/build/turing-project/TuringMachine/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/build/turing-project/ReadTMfile/CMakeFiles/Readtmfile.dir
+/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/build/turing-project/ReadTMfile/CMakeFiles/edit_cache.dir
+/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/build/turing-project/ReadTMfile/CMakeFiles/rebuild_cache.dir

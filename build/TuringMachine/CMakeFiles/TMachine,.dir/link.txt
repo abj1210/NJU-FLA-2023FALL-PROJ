@@ -1,0 +1,2 @@
+/usr/bin/ar qc libTMachine,.a CMakeFiles/TMachine,.dir/TuringMachine.o
+/usr/bin/ranlib libTMachine,.a

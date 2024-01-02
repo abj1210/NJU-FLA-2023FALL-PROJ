@@ -1,0 +1,165 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15.0"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "turing-project",
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"jsonFile" : "directory-turing-project-Debug-890916b4983e625c547e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "turing-project",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "turing-project/TuringMachine",
+					"jsonFile" : "directory-turing-project.TuringMachine-Debug-9fe46df162716bcb928e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "turing-project/TuringMachine",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "turing-project/ReadTMfile",
+					"jsonFile" : "directory-turing-project.ReadTMfile-Debug-24f77bd43c3ef5f5f3ec.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 3,
+					"source" : "turing-project/ReadTMfile",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "TMproj"
+				},
+				{
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "turing",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "Tmachine",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "Readtmfile",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 3,
+					"id" : "Readtmfile::@4c206e07c6bc268a9288",
+					"jsonFile" : "target-Readtmfile-Debug-da2a49304bacd77030ae.json",
+					"name" : "Readtmfile",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Tmachine::@3973c7a80ddcae7e816f",
+					"jsonFile" : "target-Tmachine-Debug-5bbb3a03583a91692832.json",
+					"name" : "Tmachine",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "turing::@d77c786cf9a236b4fc7d",
+					"jsonFile" : "target-turing-Debug-c7752bb5e6ebddf86b88.json",
+					"name" : "turing",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/mnt/c/Users/\u95fb\u5609\u8fc5/liucan/code/NJU-FLA-2023FALL-PROJ/build",
+		"source" : "/mnt/c/Users/\u95fb\u5609\u8fc5/liucan/code/NJU-FLA-2023FALL-PROJ"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

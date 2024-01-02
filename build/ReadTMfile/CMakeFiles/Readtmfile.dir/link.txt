@@ -1,0 +1,2 @@
+/usr/bin/ar qc libReadtmfile.a CMakeFiles/Readtmfile.dir/ReadTMfile.cpp.o
+/usr/bin/ranlib libReadtmfile.a

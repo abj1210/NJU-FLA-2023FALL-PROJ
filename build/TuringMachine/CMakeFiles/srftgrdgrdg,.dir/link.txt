@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsrftgrdgrdg,.a CMakeFiles/srftgrdgrdg,.dir/TuringMachine.o
+/usr/bin/ranlib libsrftgrdgrdg,.a

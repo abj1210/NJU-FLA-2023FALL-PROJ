@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/build/turing-project",
+  "command": "/usr/bin/g++  -I/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/build/turing-project -I/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/turing-project/ReadTMfile -I/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/turing-project/TuringMachine -g -std=gnu++14 -o CMakeFiles/turing.dir/main.cpp.o -c /mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/turing-project/main.cpp",
+  "file": "/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/turing-project/main.cpp"
+},
+{
+  "directory": "/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/build/turing-project/TuringMachine",
+  "command": "/usr/bin/g++   -g -std=gnu++14 -o CMakeFiles/Tmachine.dir/TuringMachine.cpp.o -c /mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/turing-project/TuringMachine/TuringMachine.cpp",
+  "file": "/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/turing-project/TuringMachine/TuringMachine.cpp"
+},
+{
+  "directory": "/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/build/turing-project/TuringMachine",
+  "command": "/usr/bin/g++   -g -std=gnu++14 -o CMakeFiles/Tmachine.dir/TuringSubclass.cpp.o -c /mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/turing-project/TuringMachine/TuringSubclass.cpp",
+  "file": "/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/turing-project/TuringMachine/TuringSubclass.cpp"
+},
+{
+  "directory": "/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/build/turing-project/ReadTMfile",
+  "command": "/usr/bin/g++   -g -std=gnu++14 -o CMakeFiles/Readtmfile.dir/ReadTMfile.cpp.o -c /mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/turing-project/ReadTMfile/ReadTMfile.cpp",
+  "file": "/mnt/c/Users/闻嘉迅/liucan/code/NJU-FLA-2023FALL-PROJ/turing-project/ReadTMfile/ReadTMfile.cpp"
+}
+]

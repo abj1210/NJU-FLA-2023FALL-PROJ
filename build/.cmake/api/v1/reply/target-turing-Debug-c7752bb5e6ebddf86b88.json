@@ -1,0 +1,164 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "/mnt/c/Users/\u95fb\u5609\u8fc5/liucan/code/NJU-FLA-2023FALL-PROJ/bin/turing"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"target_link_libraries",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"turing-project/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 7,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 11,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 18,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 13,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 20,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g"
+				},
+				{
+					"fragment" : "-std=gnu++14"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 4,
+					"path" : "/mnt/c/Users/\u95fb\u5609\u8fc5/liucan/code/NJU-FLA-2023FALL-PROJ/build/turing-project"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/mnt/c/Users/\u95fb\u5609\u8fc5/liucan/code/NJU-FLA-2023FALL-PROJ/turing-project/ReadTMfile"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "/mnt/c/Users/\u95fb\u5609\u8fc5/liucan/code/NJU-FLA-2023FALL-PROJ/turing-project/TuringMachine"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "14"
+			},
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "Tmachine::@3973c7a80ddcae7e816f"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "Readtmfile::@4c206e07c6bc268a9288"
+		}
+	],
+	"id" : "turing::@d77c786cf9a236b4fc7d",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "ReadTMfile/libReadtmfile.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "TuringMachine/libTmachine.a",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "turing",
+	"nameOnDisk" : "turing",
+	"paths" : 
+	{
+		"build" : "turing-project",
+		"source" : "turing-project"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "turing-project/main.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}
