@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>NJU-FLA-2023FALL-PROJ</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="nju-fla-2023fall-proj">NJU-FLA-2023FALL-PROJ</h1>
+<p>Standard Turing Machine Description Language<br>
+<strong>2023秋FLA大作业</strong><br>
+姓名:闻嘉迅<br>
+学号:211220091<br>
+日期:2024.1.2(最后修改)</p>
+<h2 id="编译与运行">编译与运行</h2>
+<ol>
+<li>在含有<code>CMakeLists.txt</code>的文件夹下，使用指令<code>cmake -B build</code>；</li>
+<li>在含有<code>CMakeLists.txt</code>的文件夹下，使用指令<code>cd ./build; make</code>。</li>
+</ol>
+<p>测试框架将使用上述方法对工程进行编译。执行完毕后，在工程根目录下应当出现<code>/bin</code>文件夹，其中含有可执行文件<code>turing</code>。</p>
+<h2 id="实验完成度">实验完成度</h2>
+<p>(自认为)完成了所有实验要求.</p>
+<h2 id="文件结构">文件结构</h2>
+<ul>
+<li>turing-project: 源代码文件夹
+<ul>
+<li>main.cpp: 主函数</li>
+<li>ReadTMfile: 图灵机解析器文件夹
+<ul>
+<li>ReadTMfile.cpp: 图灵机解析器类的实现</li>
+<li>ReadTMfile.h: 图灵机解析器类的定义</li>
+</ul>
+</li>
+<li>TuringMachine: 图灵机模拟器文件夹
+<ul>
+<li>TuringMachine.cpp: 图灵机模拟器类的实现</li>
+<li>TuringMachine.cpp: 图灵机模拟器类的定义</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="实现思路">实现思路</h2>
+<h3 id="主函数部分">主函数部分</h3>
+<p>首先根据命令行输入决定运行模式,然后通过解析器读取图灵机文件,再根据读取的数据对模拟器进行初始化,最后得到运行结果.</p>
+<h3 id="图灵机解析器">图灵机解析器</h3>
+<p>实现了一个图灵机文件解析器类 <code>ReadTMfile</code>，用于解析图灵机描述文件。下面是对该类的主要分析：</p>
+<h4 id="成员函数解析">成员函数解析：</h4>
+<ol>
+<li>
+<p><strong><code>readrule</code> 函数</strong>：</p>
+<ul>
+<li>参数：<code>string str</code> 表示要分割的字符串，<code>string split</code> 表示分隔符。</li>
+<li>返回值：<code>vector&lt;string&gt;</code>，表示分割后的子字符串数组。</li>
+<li>功能：根据给定的分隔符，将输入字符串分割成子字符串，并存储在一个 vector 中。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>readline</code> 函数</strong>：</p>
+<ul>
+<li>参数：<code>char *buf</code>，表示用于存储读取的一行内容的字符数组。</li>
+<li>返回值：<code>bool</code>，表示读取是否成功。</li>
+<li>功能：从文件中读取一行内容，排除空行和注释行。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>readStateSet</code> 函数</strong>：</p>
+<ul>
+<li>返回值：<code>bool</code>，表示读取是否成功。</li>
+<li>功能：从文件中读取图灵机的状态集合。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>readCharSet</code> 函数</strong>：</p>
+<ul>
+<li>参数：<code>char mode</code>，表示读取字符集合的类型（输入符号集合或图灵机字符集合）。</li>
+<li>返回值：<code>bool</code>，表示读取是否成功。</li>
+<li>功能：从文件中读取字符集合。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>readStartState</code> 函数</strong>：</p>
+<ul>
+<li>返回值：<code>bool</code>，表示读取是否成功。</li>
+<li>功能：从文件中读取图灵机的初始状态。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>readBlankChar</code> 函数</strong>：</p>
+<ul>
+<li>返回值：<code>bool</code>，表示读取是否成功。</li>
+<li>功能：从文件中读取图灵机的空白符。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>readFinalSet</code> 函数</strong>：</p>
+<ul>
+<li>返回值：<code>bool</code>，表示读取是否成功。</li>
+<li>功能：从文件中读取图灵机的最终状态集合。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>readTapeNum</code> 函数</strong>：</p>
+<ul>
+<li>返回值：<code>bool</code>，表示读取是否成功。</li>
+<li>功能：从文件中读取图灵机的磁带数目。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>pushTransRule</code> 函数</strong>：</p>
+<ul>
+<li>返回值：<code>bool</code>，表示读取是否成功。</li>
+<li>功能：从文件中读取并压入转移规则。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>checkInput</code> 函数</strong>：</p>
+<ul>
+<li>返回值：<code>bool</code>，表示输入是否有效。</li>
+<li>功能：检查输入字符串是否符合图灵机的输入符号集合。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>checkError</code> 函数</strong>：</p>
+<ul>
+<li>返回值：<code>int</code>，表示错误代码。</li>
+<li>功能：检查文件解析过程中是否出现错误，并输出错误信息。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>printInvInput</code> 函数</strong>：</p>
+<ul>
+<li>功能：输出无效输入的错误信息。</li>
+</ul>
+</li>
+<li>
+<p><strong>构造函数 <code>ReadTMfile</code></strong>：</p>
+<ul>
+<li>参数：<code>const char * filename</code>，表示图灵机描述文件的文件名；<code>const char * input</code>，表示输入字符串。</li>
+<li>功能：初始化图灵机文件解析器，打开文件，并进行图灵机描述文件的解析。</li>
+</ul>
+</li>
+</ol>
+<h4 id="成员变量解析">成员变量解析：</h4>
+<ol>
+<li><code>FILE *file</code>：用于存储打开的文件指针。</li>
+<li><code>int errorno</code>：用于存储错误代码。</li>
+<li><code>int line</code>：用于记录当前读取的行号。</li>
+<li><code>set&lt;char&gt; Gset</code>：用于存储图灵机字符集合。</li>
+<li><code>set&lt;char&gt; Sset</code>：用于存储输入符号集合。</li>
+<li><code>set&lt;string&gt; STset</code>：用于存储图灵机状态集合。</li>
+<li><code>vector&lt;string&gt; stateset</code>：用于存储图灵机状态集合的字符串形式。</li>
+<li><code>string start</code>：用于存储图灵机的初始状态。</li>
+<li><code>char blankchar</code>：用于存储图灵机的空白符。</li>
+<li><code>vector&lt;string&gt; finalset</code>：用于存储图灵机最终状态集合的字符串形式。</li>
+<li><code>vector&lt;queue&lt;string&gt;&gt; rulelst</code>：用于存储转移规则。</li>
+<li><code>int tapenum</code>：用于存储图灵机的磁带数目。</li>
+<li><code>string input</code>：用于存储输入字符串。</li>
+<li><code>int step</code>：用于记录输入字符串的无效位置。</li>
+</ol>
+<h3 id="图灵机模拟器">图灵机模拟器</h3>
+<p>实现了一个简单的图灵机模拟器类 <code>TuringMachine</code>，用于模拟运行图灵机。</p>
+<h4 id="主要功能和结构分析">主要功能和结构分析：</h4>
+<ol>
+<li>
+<p><strong>构造函数 <code>TuringMachine</code></strong>：</p>
+<ul>
+<li>参数：接受图灵机的初始状态集合、最终状态集合、初始状态、空白符、磁带数目、是否打印模拟过程。</li>
+<li>功能：根据传入的参数初始化图灵机的状态、规则等信息。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>loadTransRule</code> 函数</strong>：</p>
+<ul>
+<li>参数：接受转移规则的字符串数组。</li>
+<li>功能：解析转移规则并加载到相应的状态中。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>getcharlst</code> 函数</strong>：</p>
+<ul>
+<li>返回值：当前磁带上的字符序列。</li>
+<li>功能：获取当前磁带上的字符序列。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>updatecharlst</code> 函数</strong>：</p>
+<ul>
+<li>参数：新字符序列、磁带移动方向。</li>
+<li>功能：根据转移规则更新磁带上的字符序列。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>statetrans</code> 函数</strong>：</p>
+<ul>
+<li>返回值：表示是否成功进行状态转移。</li>
+<li>功能：根据当前状态、磁带上的字符序列，执行状态转移操作。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>reset</code> 函数</strong>：</p>
+<ul>
+<li>功能：重置图灵机的状态、计数器、是否接受等信息。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>runTuringMachine</code> 函数</strong>：</p>
+<ul>
+<li>参数：输入字符串。</li>
+<li>返回值：表示是否接受输入字符串。</li>
+<li>功能：运行图灵机，模拟图灵机的工作过程。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>printstep</code> 函数</strong>：</p>
+<ul>
+<li>功能：在每一步模拟之后打印当前的状态、磁带内容、磁头位置等信息。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>printfinal</code> 函数</strong>：</p>
+<ul>
+<li>功能：在模拟结束后打印最终的结果，包括接受状态、磁带内容等信息。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>printinput</code> 函数</strong>：</p>
+<ul>
+<li>功能：在开始模拟前打印输入信息。</li>
+</ul>
+</li>
+</ol>
+<h4 id="成员变量">成员变量：</h4>
+<ol>
+<li><code>nowstate</code>：当前图灵机的状态。</li>
+<li><code>start</code>：图灵机的初始状态。</li>
+<li><code>blankchar</code>：图灵机的空白符。</li>
+<li><code>tapenum</code>：磁带的数目。</li>
+<li><code>accept</code>：表示是否接受输入。</li>
+<li><code>print</code>：表示是否打印模拟过程。</li>
+<li><code>step</code>：模拟的步数计数器。</li>
+<li><code>statelst</code>：存储图灵机状态的 map。</li>
+<li><code>tapelst</code>：存储磁带上的字符序列的 vector。</li>
+<li><code>tapeidx</code>：存储每个磁带的磁头位置的 vector。</li>
+<li><code>offset</code>：存储每个磁带的偏移量的 vector。</li>
+</ol>
+<h4 id="模拟过程">模拟过程：</h4>
+<ul>
+<li>模拟过程通过 <code>statetrans</code> 函数实现，该函数会根据当前状态和磁带内容执行状态转移，并更新磁带上的字符序列和磁头位置。</li>
+<li>在每一步模拟后，通过 <code>printstep</code> 函数打印当前的状态、磁带内容和磁头位置信息。</li>
+<li>模拟结束后，通过 <code>printfinal</code> 函数打印最终的结果，包括接受状态、磁带内容等信息。</li>
+</ul>
+<h4 id="注意事项">注意事项：</h4>
+<ul>
+<li>代码中使用 <code>printf</code> 函数进行输出，适用于 C++ 的标准输出流。</li>
+<li>对于磁带内容的表示，空白符用 <code>_</code> 表示。</li>
+<li>磁头位置用 <code>^</code> 表示。</li>
+</ul>
+<h2 id="遇到的问题和解决方法">遇到的问题和解决方法</h2>
+<p>进行实验时,在判断输入是否合法和查找相应状态的转移规则时遇到了困难:直接采用暴力搜索的方式效率低下且实现较为复杂,因此采用了STL中的set类和map类,简化了实现并提高了效率.</p>
+
+        
+        
+    </body>
+    </html>
